@@ -55,14 +55,14 @@ const Publish = ({ token }) => {
   };
 
   return token ? (
-    <div className="publish-main">
-      <div className="publish-container">
-        <h2>Vends ton article</h2>
+    <div className="publish-main bg-grey h-screen md:flex justify-center lg:flex lg:justify-center xl:flex 2xl:justify-center 2xl:flex">
+      <div className="publish-container  px-4 py-4 md:w-3/4 lg:w-3/4 xl:w-3/4 2xl:w-1/2 ">
+        <h2 className=" text-xl my-2 font-medium">Vends ton article</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="file-select">
+          <div className="file-select bg-white ">
             {preview ? (
-              <div className="dashed-preview-image">
+              <div className="dashed-preview-image ">
                 <img src={preview} alt="pré-visualisation" />
                 <div
                   className="remove-img-button"
@@ -75,15 +75,12 @@ const Publish = ({ token }) => {
               </div>
             ) : (
               <div className="dashed-preview-without">
-                <div className="input-design-default">
-                  <label htmlFor="file" className="label-file">
-                    <span className="input-sign">+</span>
-                    <span>Ajoute une photo</span>
-                  </label>
+                <div className="input-design-default h-12 px-2  flex items-center ">
+                  <label htmlFor="file" className="label-file  "></label>
                   <input
                     id="file"
                     type="file"
-                    className="input-file"
+                    className="input-file  "
                     onChange={(event) => {
                       setFile(event.target.files[0]);
                       setPreview(URL.createObjectURL(event.target.files[0]));
@@ -95,8 +92,9 @@ const Publish = ({ token }) => {
           </div>
           <div className="text-input-section">
             <div className="text-input">
-              <h4>Titre</h4>
+              <h4 className=" text-lg font-medium my-2">Titre</h4>
               <input
+                className=" h-12 px-2  flex items-center w-full"
                 type="text"
                 id="title"
                 name="title"
@@ -108,8 +106,9 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <h4>Décris ton article</h4>
+              <h4 className=" text-lg font-medium my-2">Décris ton article</h4>
               <textarea
+                className=" h-12 px-2  flex items-center w-full pt-2"
                 name="description"
                 id="description"
                 rows="5"
@@ -123,8 +122,9 @@ const Publish = ({ token }) => {
           </div>
           <div className="text-input-section">
             <div className="text-input">
-              <h4>Marque</h4>
+              <h4 className=" text-lg font-medium my-2">Marque</h4>
               <input
+                className=" h-12 px-2  flex items-center w-full"
                 type="text"
                 id="selectedBrand"
                 name="selectedBrand"
@@ -136,8 +136,9 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <h4>Taille</h4>
+              <h4 className=" text-lg font-medium my-2">Taille</h4>
               <input
+                className=" h-12 px-2  flex items-center w-full"
                 type="text"
                 id="selectedSize"
                 name="selectedSize"
@@ -149,8 +150,9 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <h4>Couleur</h4>
+              <h4 className=" text-lg font-medium my-2">Couleur</h4>
               <input
+                className=" h-12 px-2  flex items-center w-full"
                 type="text"
                 id="color"
                 name="color"
@@ -162,8 +164,9 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <h4>Etat</h4>
+              <h4 className=" text-lg font-medium my-2">Etat</h4>
               <input
+                className=" h-12 px-2  flex items-center w-full"
                 name="wearRate"
                 id="wearRate"
                 placeholder="Neuf avec étiquette"
@@ -171,8 +174,9 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <h4>Lieu</h4>
+              <h4 className=" text-lg font-medium my-2">Lieu</h4>
               <input
+                className=" h-12 px-2  flex items-center w-full"
                 name="city"
                 id="city"
                 placeholder="ex: Paris"
@@ -182,9 +186,10 @@ const Publish = ({ token }) => {
           </div>
           <div className="text-input-section">
             <div className="text-input">
-              <h4>Prix</h4>
+              <h4 className=" text-lg font-medium my-2">Prix</h4>
               <div className="checkbox-section">
                 <input
+                  className=" h-12 px-2  flex items-center w-full"
                   type="text"
                   id="price"
                   name="price"
@@ -198,7 +203,10 @@ const Publish = ({ token }) => {
             </div>
           </div>
           <div className="form-button-div">
-            <button type="submit" className="form-validation">
+            <button
+              type="submit"
+              className=" bg-vintedgreen h-8 w-full text-white mt-6"
+            >
               Ajouter
             </button>
           </div>

@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../componants/Hero";
-
+import avatar from "../data/avatar.gif";
 const Home = ({ search }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -31,30 +31,52 @@ const Home = ({ search }) => {
   ) : (
     <div>
       <Hero />
-      <div>
+      <h2 className="my-4 text-xl font-medium px-2 md:my-6 max-w-6xl mx-auto  ">
+        Fil d'actu
+      </h2>
+      <div className=" flex flex-wrap max-w-6xl mx-auto  ">
         {data.offers.map((offer) => {
           console.log(offer);
+
           return (
             //card
-            <Link to={`/offer/${offer._id}`}>
-              <div id={offer._id}>
-                <div>
-                  <img src={offer.owner.account.avatar?.url} alt="" />
+
+            <Link
+              className=" w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 2xl:w-1/4  "
+              to={`/offer/${offer._id}`}
+            >
+              <div className="flex-col  mx-2  mb-6 h-96 " id={offer._id}>
+                <div className="flex pb-1 ">
+                  <img
+                    className=" w-6 rounded-full mr-2 "
+                    src={avatar}
+                    alt=""
+                  />
                   <p>
                     {offer.owner.account.username
                       .replace("_", " ")
                       .replace(".", " ")}
                   </p>
                 </div>
-                <img src={offer.product_image.url} alt="" />
+                <img
+                  className="w-full h-60 object-cover lg:h-72 "
+                  src={offer.product_image.url}
+                  alt=""
+                />
                 <div>
-                  <div>
-                    <p>{offer.product_price}</p>
-                    <p>{offer.product_name}</p>
+                  <div className="flex justify-between items-center">
+                    <p className="ml-2 mt-1">{offer.product_price} €</p>
+                    <p className="ml-2">{offer.product_name}</p>
                     <i></i>
                   </div>
-                  <span>{offer.product_details[1]["TAILLE"]}</span>
-                  <span>{offer.product_details[0]["MARQUE"]}</span>
+                  <div className="flex flex-col">
+                    <span className="ml-2">
+                      taille : {offer.product_details[1]["TAILLE"]}{" "}
+                    </span>
+                    <span className="ml-2">
+                      {offer.product_details[0]["MARQUE"]}
+                    </span>
+                  </div>
                 </div>
               </div>
             </Link>

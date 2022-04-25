@@ -56,10 +56,14 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div>
-      <h1>S'inscrire</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="flex flex-col mt-10 items-center ">
+      <h1 className=" text-2xl mb-6">S'inscrire</h1>
+      <form
+        className="flex flex-col gap-4 w-1/3 md:w-1/2"
+        onSubmit={handleSubmit}
+      >
         <input
+          className=" border-b border-pink"
           placeholder="Nom d'utilisateur"
           type="text"
           name="username"
@@ -67,6 +71,7 @@ const Signup = ({ setUser }) => {
           onChange={handleUsernameChange}
         />
         <input
+          className=" border-b border-pink"
           placeholder="Email"
           type="text"
           name="email"
@@ -74,16 +79,23 @@ const Signup = ({ setUser }) => {
           onChange={handleEmailChange}
         />
         <input
+          className=" border-b border-pink"
           placeholder="Password"
           type="password"
           name="password"
           value={password}
           onChange={handlePasswordChange}
         />
-        <input type="submit" value="Submit" />
+        <input
+          className="bg-vintedgreen h-8 text-white mb-2"
+          type="submit"
+          value="Submit"
+        />
       </form>
-      <Link to="/login">Déja un compte ? Connecte-toi !</Link>
-      <span>{errorMessage}</span>
+      <Link className="text-vintedgreen" to="/login">
+        Déja un compte ? Connecte-toi !
+      </Link>
+      <span className="text-red">{errorMessage}</span>
     </div>
   );
 };

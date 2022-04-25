@@ -27,6 +27,7 @@ const Offer = ({ token }) => {
         );
         setData(response.data);
         setIsLoading(false);
+        console.log(data);
       } catch (error) {
         console.log(error.response);
       }
@@ -37,30 +38,39 @@ const Offer = ({ token }) => {
   return isLoading ? (
     <span>En cours de chargement</span>
   ) : (
-    <div>
-      <img src={data.product_image.secure_url} alt={data.product_name} />
-      <div>
-        <p>{data.product_price} €</p>
-        <p>
-          Notre Protection acheteurs est ajoutée, moyennant des frais, pour
-          chaque transaction effectuée par le biais du bouton « Acheter ». Cette
-          protection acheteurs comprend notre Politique de remboursement.
+    <div className="mt-2  bg-grey h-screen md:flex md:h-auto md:pb-8  lg:flex lg:h-auto lg:pb-10 lg:max-h-hero  xl:flex xl:h-auto xl:pb-10">
+      <img
+        className="   max-w-xs  w-[90%] object-cover mx-auto pt-6 md:h-full md:max-h-full   "
+        src={data.product_image.secure_url}
+        alt={data.product_name}
+      />
+      <div className="mt-6  bg-white mx-auto w-[90%] flex flex-col md:w-72 lg:w-80  xl:w-96  ">
+        <p className=" text-2xl p-3 font-medium justify-center mx-auto">
+          {data.product_price} €
         </p>
+
         <ul>
           {data.product_details.map((elem, index) => {
             const keys = Object.keys(elem);
             return (
-              <li key={index}>
-                <span> {elem[keys[0]].toLowerCase()}</span>
+              <li className="flex w-full  justify-between px-6" key={index}>
+                <span className="w-1/2">{keys[0]}</span>
+                <span className="font-medium ">
+                  {elem[keys[0]].toLowerCase()}
+                </span>
               </li>
             );
           })}
         </ul>
-        <div className="btn-card-offer">
-          <button className="btn-ask">Envoyez un message</button>
+        <p className="   mb-4 px-4 mt-5 text-sm md:text-xs">
+          Notre Protection acheteurs est ajoutée, moyennant des frais, pour
+          chaque transaction effectuée par le biais du bouton « Acheter ». Cette
+          protection acheteurs comprend notre Politique de remboursement.
+        </p>
+        <div className="flex justify-center  py-4">
           {token ? (
             <button
-              className="btn-buy"
+              className="bg-vintedgreen h-8 text-white px-32 md:w-3/4 md:mt-10 lg:w-3/4 lg:mt-10"
               onClick={() => {
                 navigate("/payment", {
                   state: {

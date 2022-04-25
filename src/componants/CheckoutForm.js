@@ -36,11 +36,15 @@ const CheckoutForm = ({ productName, totalPrice }) => {
   };
 
   return isPaid ? (
-    <p>Merci pour votre achat.</p>
+    <p className="text-xl font-medium  mt-10">Merci pour votre achat.</p>
   ) : (
     <form onSubmit={handleSubmit}>
-      <CardElement />
-      <button type="submit" disabled={!stripe}>
+      <CardElement className="bg-white h-8 items-center pt-2" />
+      <button
+        className="bg-vintedgreen text-white h-8  mt-4 justify-center w-full "
+        type="submit"
+        disabled={!stripe}
+      >
         Pay
       </button>
     </form>

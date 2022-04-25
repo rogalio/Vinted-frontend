@@ -51,25 +51,36 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div>
-      <h1>Se connecter</h1>
-      <form onSubmit={handleSubmit}>
+    <div className=" flex flex-col mt-10 items-center  ">
+      <h1 className=" text-2xl mb-6 ">Se connecter</h1>
+      <form
+        className="flex flex-col gap-4 w-1/3 md:w-1/2"
+        onSubmit={handleSubmit}
+      >
         <input
+          className=" border-b border-pink"
           type="email"
           placeholder="Adresse email"
           value={email}
           onChange={handleEmailChange}
         />
         <input
+          className="border-b border-pink "
           type="password"
           placeholder="Mot de passe"
           value={password}
           onChange={handlePasswordChange}
         />
-        <input type="submit" value="Submit" />
+        <input
+          className="bg-vintedgreen h-8 text-white mb-2"
+          type="submit"
+          value="Se connecter"
+        />
+        <span className="text-red">{errorMessage}</span>
       </form>
-      <Link to="/signup">Pas encore Inscrit ? Inscris toi !</Link>
-      <span>{errorMessage}</span>
+      <Link className="text-vintedgreen" to="/signup">
+        Pas encore Inscrit ? Inscris toi !
+      </Link>
     </div>
   );
 };
