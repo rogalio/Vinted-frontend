@@ -54,7 +54,7 @@ const Login = ({ setUser }) => {
     <div className=" flex flex-col mt-10 items-center  ">
       <h1 className=" text-2xl mb-6 ">Se connecter</h1>
       <form
-        className="flex flex-col gap-4 w-1/3 md:w-1/2"
+        className="flex flex-col gap-4 w-1/2 md:w-1/2"
         onSubmit={handleSubmit}
       >
         <input
