@@ -39,13 +39,13 @@ const Offer = ({ token }) => {
   return isLoading ? (
     <span>En cours de chargement</span>
   ) : (
-    <div className="mt-2  bg-grey h-screen md:flex md:h-auto md:pb-8  lg:flex lg:h-auto lg:pb-10 lg:max-h-hero  xl:flex xl:h-auto xl:pb-10">
+    <div className="mt-2  bg-grey h-screen md:flex md:h-auto md:pb-8  lg:flex lg:h-auto lg:pb-10 lg:max-h-hero  xl:flex xl:h-auto xl:pb-10  ">
       <img
         className="   max-w-xs  w-[90%] object-cover mx-auto pt-6 md:h-full md:max-h-full   "
         src={data.product_image.secure_url}
         alt={data.product_name}
       />
-      <div className="mt-6  bg-white mx-auto w-[90%] flex flex-col md:w-72 lg:w-80  xl:w-96  ">
+      <div className="mt-6  bg-white mx-auto w-[90%] flex flex-col md:w-96 lg:w-96  xl:w-96  ">
         <p className=" text-2xl p-3 font-medium justify-center mx-auto">
           {data.product_price} €
         </p>

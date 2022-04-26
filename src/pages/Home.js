@@ -32,7 +32,7 @@ const Home = ({ search }) => {
   ) : (
     <div>
       <Hero />
-      <h2 className="my-4 text-xl font-medium px-2 md:my-6 max-w-6xl mx-auto  bg-red ">
+      <h2 className="my-4 text-xl font-medium px-2 md:my-6 max-w-6xl mx-auto   ">
         Fil d'actu
       </h2>
       <div className=" flex flex-wrap max-w-6xl mx-auto  ">
