@@ -32,7 +32,7 @@ const Home = ({ search }) => {
   ) : (
     <div>
       <Hero />
-      <h2 className="my-4 text-xl font-medium px-2 md:my-6 max-w-6xl mx-auto  ">
+      <h2 className="my-4 text-xl font-medium px-2 md:my-6 max-w-6xl mx-auto  bg-red ">
         Fil d'actu
       </h2>
       <div className=" flex flex-wrap max-w-6xl mx-auto  ">
@@ -60,7 +60,7 @@ const Home = ({ search }) => {
                   </p>
                 </div>
                 <img
-                  className="w-full h-60 object-cover lg:h-80 "
+                  className="w-full h-60 object-cover lg:h-80 xl:h-80 2xl:h-80 3xl:h-80 "
                   src={offer.product_image.url}
                   alt=""
                 />
