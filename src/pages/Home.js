@@ -24,7 +24,7 @@ const Home = ({ search }) => {
       }
     };
     FetchData();
-  }, [search]);
+  }, [search, data]);
 
   return isLoading ? (
     <div>En cours de chargement...</div>

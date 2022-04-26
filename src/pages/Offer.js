@@ -33,7 +33,7 @@ const Offer = ({ token }) => {
       }
     };
     FetchData();
-  }, [id]);
+  }, [id, data]);
 
   return isLoading ? (
     <span>En cours de chargement</span>
