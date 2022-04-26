@@ -33,7 +33,8 @@ const Offer = ({ token }) => {
       }
     };
     FetchData();
-  }, [id, data]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   return isLoading ? (
     <span>En cours de chargement</span>

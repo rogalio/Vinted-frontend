@@ -24,7 +24,8 @@ const Home = ({ search }) => {
       }
     };
     FetchData();
-  }, [search, data]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
 
   return isLoading ? (
     <div>En cours de chargement...</div>
