@@ -65,7 +65,7 @@ const Home = ({ search }) => {
                   alt=""
                 />
                 <div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex flex-col ">
                     <p className="ml-2 mt-1">{offer.product_price} €</p>
                     <p className="ml-2">{offer.product_name}</p>
                     <i></i>
