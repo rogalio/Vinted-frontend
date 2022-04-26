@@ -60,7 +60,7 @@ const Home = ({ search }) => {
                   </p>
                 </div>
                 <img
-                  className="w-full h-60 object-cover lg:h-72 "
+                  className="w-full h-60 object-cover lg:h-80 "
                   src={offer.product_image.url}
                   alt=""
                 />
